@@ -38,8 +38,13 @@ spring:
 #mybatis config
 mybatis:
   #typeAliasesPackage: com.lyt.moduel.*
+#  实体类包路径
   type-aliases-package: com.lyt.moduel.*
-  mapperLocations: classpath:mappings/**/*.xml
+#  配置MyBatis基础属性
+  config-locations: classpath:mappings/**/*.xml
+#  配置Mapper XML文件
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
   configuration:
     call-setters-on-nulls: true
     # 打印sql, 方便调试
