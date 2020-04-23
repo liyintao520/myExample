@@ -1,0 +1,16 @@
+该项目是一些简单的demo样式为案例的。集成各种插件
+1、myExample是父项目
+    lyt-dao：公用的包，集成mybatis，里面对应的都是数据库的一些东西
+        (其实这个dao中已经集成了Redis了)
+    lyt-demo：
+    lyt-eureka：注册中心（服务端）
+    lyt-mq：集成消息队列（比如：RabbitMq）
+    lyt-redis：集成redis，编写一些redis的案例
+    lyt-timer：正常的使用注解形式的定时任务
+    lyt-timerTwo：利用配置文件，配置定时写的定时任务。
+    lyt-web：大杂烩
+    lyt-zuul：网关
+    lyt-weChat：微信相关的demo
+    lyt-oauth：登录服务--主要是做一些简单的接口校验。过滤等等（根据接口地址通过zuul在调用其他服务是的基本校验）
+
+    my-shop：是一个网站开发，可作为系统后台。
