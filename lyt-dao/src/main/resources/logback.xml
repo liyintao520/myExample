@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <springProperty name="logfile" source="my.application.logfileName"/>
+
+    <root level="INFO">
+        <appender name="logFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <!--<file>./logs/${logfile}.log</file>--><!-- 输出 /logs/logfile_IS_UNDEFINED.log  日志 -->
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <!-- daily rollover -->
+                <fileNamePattern>/opt/app_file/zwjf/logs/m-xbd/login/logs/m-xbd-login_Server_logBack.%d{yyyy-MM-dd}.log</fileNamePattern><!--日常请求日志-->
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+
+           <!-- <encoder>
+                <pattern>%relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+            </encoder>-->
+            <encoder>
+                <ImmediateFlush>false</ImmediateFlush>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss,GMT+8} %-5p [%t] - %m%n</pattern><!--日志格式-->
+                <charset class="java.nio.charset.Charset">UTF-8</charset>
+            </encoder>
+        </appender>
+    </root>
+
+    <logger name="org.mybatis" level="DEBUG"/>
+    <logger name="java.sql" level="DEBUG" />
+    <logger name="com.dd.dao" level="DEBUG" />
+</configuration>
