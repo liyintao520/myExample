@@ -39,7 +39,7 @@
         <rocketmq.version>3.6.2.Final</rocketmq.version>
         <dozer.version>5.5.1</dozer.version>
         <druid.version>1.1.22</druid.version>
-        <mysql-connect.version>8.0.19</mysql-connect.version>
+        <mysql-connect.version>6.0.6</mysql-connect.version>
         <mysql-spring.version>2.1.2</mysql-spring.version>
         <guava.version>29.0-jre</guava.version>
         <amqp-client.version>5.9.0</amqp-client.version>
@@ -53,5 +53,6 @@
         <module>lyt-dao</module>
         <module>lyt-example</module>
         <module>my-shop</module>
+        <module>lyt-shop</module>
     </modules>
 </project>
