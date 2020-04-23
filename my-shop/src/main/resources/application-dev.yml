@@ -1,0 +1,25 @@
+server:
+  port: 8011
+  tomcat:
+    access-log-pattern: checkserver--%h %l %u %t "%r" %s %b (%D ms)
+    # log pattern of the access log
+    access-log-enabled: true
+    accesslog:
+      directory: /opt/deployjars/login/logs/
+
+#datasource config
+spring:
+  datasource:
+#      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/tbd?characterEncoding=UTF-8
+      username: root  #freeuser
+      password: root  #b7v508dojL
+      initialSize: 10
+      maxActive: 200
+
+#mybatis config
+mybatis:
+  typeAliasesPackage: org.cloud.demo.service.model
+  mapperLocations: classpath:mappings/**/*.xml
+  configuration:
+    call-setters-on-nulls: true
