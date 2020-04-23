@@ -25,6 +25,28 @@
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <fastjson.version>1.2.68</fastjson.version>
         <lombok.version>1.18.12</lombok.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
+        <httpclient.version>4.5.12</httpclient.version>
+        <mail.version>1.4.7</mail.version>
+        <commons-email.version>1.5</commons-email.version>
+        <redisson.version>3.12.5</redisson.version>
+        <!--<jedis.version>3.2.0</jedis.version>-->
+        <baidu.version>4.7.0</baidu.version>
+        <aliyun-core.version>4.0.6</aliyun-core.version>
+        <aliyun-dysmsapi.version>1.1.0</aliyun-dysmsapi.version>
+        <oss.version>2.8.3</oss.version>
+        <thumbnailator.version>0.4.8</thumbnailator.version>
+        <rocketmq.version>3.6.2.Final</rocketmq.version>
+        <dozer.version>5.5.1</dozer.version>
+        <druid.version>1.1.22</druid.version>
+        <mysql-connect.version>8.0.19</mysql-connect.version>
+        <mysql-spring.version>2.1.2</mysql-spring.version>
+        <guava.version>29.0-jre</guava.version>
+        <amqp-client.version>5.9.0</amqp-client.version>
+        <commons-fileupload.version>1.4</commons-fileupload.version>
+        <commons-io.version>2.6</commons-io.version>
+        <commons-codec.version>1.14</commons-codec.version>
+        <junit.version>4.13</junit.version>
     </properties>
 
     <modules>
