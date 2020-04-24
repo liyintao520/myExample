@@ -5,6 +5,12 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+/**
+ * @InterfaceName UserMapper
+ * @Description 利用注解查询
+ * @Author liyintao
+ * @Date 2020/4/24 10:21
+ */
 @Mapper
 public interface UserMapper {
 

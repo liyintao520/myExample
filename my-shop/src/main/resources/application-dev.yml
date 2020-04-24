@@ -10,8 +10,9 @@ server:
 #datasource config
 spring:
   datasource:
-#   driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/myshop?characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/myshop?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root  #freeuser
     password: root  #b7v508dojL
     initialSize: 10
@@ -43,7 +44,7 @@ mybatis:
 #  配置MyBatis基础属性
   config-locations: classpath:mappings/**/*.xml
 #  配置Mapper XML文件
-  mapper-locations: classpath:mybatis/mapper/*.xml
+  mapper-locations: classpath:mapper/**/*.xml
 
   configuration:
     call-setters-on-nulls: true

@@ -1,10 +1,13 @@
 package com.lyt.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.lyt.module.user.dao.UserDao;
 import com.lyt.module.user.dao.UserMapper;
 import com.lyt.module.user.entity.User;
 import com.lyt.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -22,6 +25,9 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserMapper userMapper;
 
+    @Autowired
+    private UserDao userDao;
+
     @Override
     public Object listAll(int page, int size) {
         PageHelper.startPage(page, size);
@@ -29,6 +35,17 @@ public class UserServiceImpl implements UserService {
         PageInfo<User> pageInfo = new PageInfo<>(userList);
         return pageInfo;
     }
+
+    @Override
+    public JSONObject xmlListAll(int page, int size, String userName) {
+        JSONObject resultJson = new JSONObject();
+        List<User> list = userDao.findUserByName(userName);
+        PageInfo<User> info = new PageInfo<>(list);
+        resultJson.put("data", list);
+        resultJson.put("recordsTotal", info.getTotal());
+        return resultJson;
+    }
+
 
     @Override
     public int insert(User user) {
