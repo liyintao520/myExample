@@ -1,6 +1,7 @@
 package com.lyt.controller;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/")
-//@Slf4j
+@Slf4j
 public class HelloController {
 
     @Autowired
