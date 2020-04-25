@@ -35,7 +35,19 @@ spring:
       connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       use-global-data-source-stat: true
       filters: stat,wall,log4j2
-
+# redis 配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 2000ms
+    database: 0
+    password:
+    lettuce:
+      pool:
+        max-active:  100 # 连接池最大连接数（使用负值表示没有限制）
+        max-idle: 100 # 连接池中的最大空闲连接
+        min-idle: 50 # 连接池中的最小空闲连接
+        max-wait: 6000ms
 #mybatis config
 mybatis:
   #typeAliasesPackage: com.lyt.moduel.*
