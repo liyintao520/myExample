@@ -1,4 +1,4 @@
-package com.lyt.module.config;
+package com.lyt.config;
 
 import com.github.pagehelper.PageHelper;
 import org.springframework.context.annotation.Configuration;

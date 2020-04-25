@@ -34,7 +34,7 @@ public class UserController {
 
     /**
      * 查询全部     利用XML查询
-     * http://localhost:8020/xmlListAll
+     * http://localhost:8020/xmlListAll?userName=liyintao
      * @param page
      * @param size
      * @return

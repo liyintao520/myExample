@@ -1,4 +1,4 @@
-package com.lyt.dao;
+package com.lyt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
