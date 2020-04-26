@@ -6,20 +6,3 @@ server:
     access-log-enabled: true
     accesslog:
       directory: /opt/deployjars/login/logs/
-
-#datasource config
-jdbc:
-  driverClassName: com.mysql.jdbc.Driver
-  url: jdbc:mysql://127.0.0.1:3306/tbd?characterEncoding=UTF-8
-#  driverClassName: net.sf.log4jdbc.DriverSpy
-#  type: com.alibaba.druid.pool.DruidDataSource
-  username: root  #freeuser
-  password: root  #b7v508dojL
-  initialSize: 10
-  maxActive: 200
-#mybatis config
-mybatis:
-  typeAliasesPackage: org.cloud.demo.service.model
-  mapperLocations: classpath:mappings/**/*.xml
-  configuration:
-    call-setters-on-nulls: true
