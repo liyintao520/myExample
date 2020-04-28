@@ -6,6 +6,7 @@ import com.lyt.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @ClassName UserController
@@ -44,6 +45,21 @@ public class UserController {
                                  @RequestParam(value = "size",defaultValue = "10")int size,
                                  @RequestParam(value = "userName") String userName){
         return userService.xmlListAll(page, size, userName);
+    }
+
+    /**
+     * 查询全部     利用XML查询
+     * http://localhost:8020/xmlFindByIds
+     *  注意：PostMan调用的时候，用post方法。选择Body--》raw 参数是： [1,2,3], 最后一项选择 JSON
+     * @param page
+     * @param size
+     * @return
+     */
+    @PostMapping("/xmlFindByIds")
+    public JSONObject xmlFindByIds(@RequestParam(value = "page",defaultValue = "1")int page,
+                                 @RequestParam(value = "size",defaultValue = "10")int size,
+                                 @RequestBody List<Integer> ids){
+        return userService.xmlFindByIds(page, size, ids);
     }
 
     /**

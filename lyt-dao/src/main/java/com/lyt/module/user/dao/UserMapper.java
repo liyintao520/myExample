@@ -14,8 +14,16 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    @Select({
-            "select id as id, USER_NAME as userName, PASS_WORD as passWord, CREATE_TIME as createTime, UPDATE_TIME as updateTime from l_user"
+//    @Select({
+//            "select id as id, USER_NAME as userName, PASS_WORD as passWord, CREATE_TIME as createTime, UPDATE_TIME as updateTime from l_user"
+//    })
+    @Select({"select * from l_user"})
+    @Results(id="userMap",  value = {
+            @Result(id = true, column = "id", property = "id"),
+            @Result(column = "USER_NAME", property = "userName"),
+            @Result(column = "PASS_WORD", property = "passWord"),
+            @Result(column = "CREATE_TIME", property = "createTime"),
+            @Result(column = "UPDATE_TIME", property = "updateTime"),
     })
     List<User> listAll();
 

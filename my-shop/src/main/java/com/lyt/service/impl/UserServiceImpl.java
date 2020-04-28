@@ -46,6 +46,15 @@ public class UserServiceImpl implements UserService {
         return resultJson;
     }
 
+    @Override
+    public JSONObject xmlFindByIds(int page, int size, List<Integer> ids) {
+        JSONObject resultJson = new JSONObject();
+        List<User> list = userDao.findByIds(ids);
+        PageInfo<User> info = new PageInfo<>(list);
+        resultJson.put("data", list);
+        resultJson.put("recordsTotal", info.getTotal());
+        return resultJson;
+    }
 
     @Override
     public int insert(User user) {
