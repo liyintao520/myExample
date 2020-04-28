@@ -1,5 +1,5 @@
 server:
-  port: 8020
+  port: 8888
   tomcat:
     access-log-pattern: checkserver--%h %l %u %t "%r" %s %b (%D ms)
     # log pattern of the access log
@@ -36,7 +36,7 @@ spring:
       connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       use-global-data-source-stat: true
       filters: stat,wall,log4j2
-# redis 配置
+  # redis 配置
   redis:
     host: 127.0.0.1
     port: 6379
@@ -52,11 +52,11 @@ spring:
 #mybatis config
 mybatis:
   #typeAliasesPackage: com.lyt.moduel.*
-#  实体类包路径
+  #  实体类包路径
   type-aliases-package: com.lyt.moduel.*
-#  配置MyBatis基础属性
+  #  配置MyBatis基础属性
   config-locations: classpath:mappings/**/*.xml
-#  配置Mapper XML文件
+  #  配置Mapper XML文件
   mapper-locations: classpath:mapper/**/*.xml
 
   configuration:
@@ -66,3 +66,11 @@ mybatis:
     use-generated-keys: true
     default-statement-timeout: 60
     default-fetch-size: 100
+
+# 属性配置
+fruit:
+  name: dev-apple
+  amount: 888
+
+#获取律师列表接口
+rrl_getList: http://192.168.10.212:83/fzss/rrlservice/terminalService/back/doGetLawyerList.do
