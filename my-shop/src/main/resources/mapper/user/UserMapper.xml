@@ -27,4 +27,17 @@
             </if>
         </where>
     </select>
+    <select id="findByIds" resultMap="BaseResultMap">
+        SELECT
+            <include refid="Base_Column_List"/>
+        FROM l_user a
+        <where>
+            <if test="ids !=null and ids.size() > 0">
+                AND a.id in
+                <foreach collection="ids" index="index" item="id" open="(" close=")" separator=",">
+                    #{id, jdbcType=INTEGER}
+                </foreach>
+            </if>
+        </where>
+    </select>
 </mapper>

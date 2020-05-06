@@ -17,6 +17,13 @@
 	<packaging>jar</packaging>
 
 	<dependencies>
+		<!-- 引入dao包 -->
+		<dependency>
+			<groupId>com.lyt</groupId>
+			<artifactId>lyt-dao</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -58,6 +65,16 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<!-- 使用@RestController注解 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
 
