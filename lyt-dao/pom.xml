@@ -42,7 +42,16 @@
 			<!-- 如果不注释掉 my-shop引入不进来这个包， 不注释掉的话 my-shop 需要添加引入这个包 -->
 			<scope>provided</scope>
 		</dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+
+		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
