@@ -1,3 +1,10 @@
 static：保存所有静态资源，js、css、images
 templates：保存所有切面模板页面，（springboot默认jar包使用嵌入式的Tomcat，默认不支持jsp页面）
            可以使用模板引擎（freeMarker、thymeleaf）
+
+
+IDEA 快捷键
+
+自动补全变量名称 : Ctrl + Alt + v   command + option + v
+
+自动补全属性名称 : Ctrl + Alt + f
