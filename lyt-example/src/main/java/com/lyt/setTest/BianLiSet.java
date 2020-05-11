@@ -16,15 +16,8 @@ import java.util.Set;
 public class BianLiSet {
 
     public static void main(String[] args) {
-        one(getSet());
-        two(getSet());
-    }
-    public static Set<String> getSet () {
-        Set<String> set = new HashSet<String>();
-        set.add("aaa");
-        set.add("bbb");
-        set.add("ccc");
-        return set;
+        one(InitSetDb.getSet());
+        two(InitSetDb.getSet());
     }
 
     /**
