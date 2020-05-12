@@ -135,11 +135,11 @@
 		</dependency>
 
 		<!--jedis  -->
-		<!--<dependency>
+		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 			<version>${jedis.version}</version>
-		</dependency>-->
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-client -->
 		<!--rocketmq-->

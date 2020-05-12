@@ -20,12 +20,11 @@ public class RandomNumber {
      *
      * @return Set<Integer>
      */
-    public static Set<Integer> GetRandomNumber() {
+    public static Set<Integer> getRandomNumber() {
         // 使用SET以此保证写入的数据不重复
         Set<Integer> set = new HashSet<Integer>();
         // 随机数
         Random random = new Random();
-
         while (set.size() < 4) {
             // nextInt返回一个伪随机数，它是取自此随机数生成器序列的、在 0（包括）
             // 和指定值（不包括）之间均匀分布的 int 值。
@@ -35,7 +34,7 @@ public class RandomNumber {
     }
 
     public static void main(String[] args) {
-        Set<Integer> set = GetRandomNumber();
+        Set<Integer> set = getRandomNumber();
         // 使用迭代器
         Iterator<Integer> iterator = set.iterator();
         // 临时记录数据
