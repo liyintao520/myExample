@@ -1,0 +1,33 @@
+run()方法和start()方法的区别：
+run方法--是主线程执行的
+
+start方法--是调用子线程来实现启动线程的
+使用start()方法启动线程才算真正意义上的启动一个线程，他会经历线程的几种状态。
+
+参考【StartAndRunMethod.java】运行打印结果
+
+
+不能重复调用两次start()--参考【CantStartTwice】
+非法的线程状态：
+Exception in thread "main" java.lang.IllegalThreadStateException
+
+start()方法源码
+1、启动新线程【检查】线程状态
+2、加入线程组 group.add(***);
+3、调用start0()方法
+
+Thread.java
+第707行有判断 线程状态默认是0
+
+停止线程的方法：
+interrupt()方法
+使用interrupt来通知，而不是强制。
+
+
+run()方法源码
+Thread.java
+第746行
+
+
+1、如何停止一个线程？
+2、如何处理不可中断的阻塞（例如抢锁时ReentrantLock.lock()或者Socket I/O 时无法响应中断，那应该怎么让该线程停止呢？）
