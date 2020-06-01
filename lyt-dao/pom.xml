@@ -184,6 +184,13 @@
 			<version>${pagehelper.version}</version>
 		</dependency>
 
+
+		<!-- mp3转换pcm -->
+		<dependency>
+			<groupId>com.googlecode.soundlibs</groupId>
+			<artifactId>mp3spi</artifactId>
+			<version>${googlecode.soundlibs.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

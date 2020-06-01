@@ -49,6 +49,8 @@
         <commons-codec.version>1.14</commons-codec.version>
         <junit.version>4.13</junit.version>
         <pagehelper.version>1.2.13</pagehelper.version>
+        
+        <googlecode.soundlibs.version>1.9.5.4</googlecode.soundlibs.version>
 
     </properties>
 
