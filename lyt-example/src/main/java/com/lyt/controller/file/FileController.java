@@ -2,6 +2,7 @@ package com.lyt.controller.file;
 
 import com.lyt.module.file.entity.UploadFileResponse;
 import com.lyt.service.file.FileService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ import java.util.stream.Collectors;
  * @Date 2020/6/1 16:06
  */
 @RestController
+@Slf4j
 public class FileController {
 
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);
@@ -35,18 +37,17 @@ public class FileController {
 
     /**
      * http://localhost:8888/uploadFile
+     * 上传文件
      * @param file
      * @return
      */
     @PostMapping("/uploadFile")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
         String fileName = fileService.storeFile(file);
-
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
                 .path(fileName)
                 .toUriString();
-
         return new UploadFileResponse(fileName, fileDownloadUri,
                 file.getContentType(), file.getSize());
     }
@@ -59,6 +60,13 @@ public class FileController {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * http://localhost:8888/downloadFile/1.gif
+     * 下载文件
+     * @param fileName
+     * @param request
+     * @return
+     */
     @GetMapping("/downloadFile/{fileName:.+}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
         // Load file as Resource
