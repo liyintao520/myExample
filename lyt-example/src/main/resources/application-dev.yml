@@ -6,23 +6,16 @@ server:
     access-log-enabled: true
     accesslog:
       directory: /opt/deployjars/login/logs/
-
 spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
   thymeleaf:
     mode: HTML5
-    encoding: UTF-8
-    #content-type: text/html
-    servlet:
-      content-type: text/html
     cache: false
-    prefix: classpath:/static/templates
-
-  #  mvc:
-#    view:
-#      # 定位模板的目录
-#      prefix: classpath:/templates/
-#      # 给返回的页面添加后缀名
-#      suffix: .html
+    encoding: UTF-8
+    prefix: classpath:/templates/
+#    suffix: .html
 
   #datasource config
   datasource:

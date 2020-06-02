@@ -7,19 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Slf4j
+//返回页面要使用Controller注解
 @Controller
-@RequestMapping("/web")
+@RequestMapping("/")
 public class IndexController {
-    /**
-     * http://localhost:8888/web/index
-     * @return
-     */
-    @GetMapping("/index")
-//    @ResponseBody
-    public String index(){
-        log.info("【lyt-example】展示首页面信息");
-//        return "index.html";
-        return "index";
+    @RequestMapping("")
+    public String index() {
+        return "index/index";
     }
-
 }
