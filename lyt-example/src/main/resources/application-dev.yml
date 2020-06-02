@@ -8,12 +8,21 @@ server:
       directory: /opt/deployjars/login/logs/
 
 spring:
-  mvc:
-    view:
-      # 定位模板的目录
-      prefix: classpath:/templates/
-      # 给返回的页面添加后缀名
-      suffix: .html
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    #content-type: text/html
+    servlet:
+      content-type: text/html
+    cache: false
+    prefix: classpath:/static/templates
+
+  #  mvc:
+#    view:
+#      # 定位模板的目录
+#      prefix: classpath:/templates/
+#      # 给返回的页面添加后缀名
+#      suffix: .html
 
   #datasource config
   datasource:
