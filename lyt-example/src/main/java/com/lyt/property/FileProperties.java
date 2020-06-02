@@ -12,12 +12,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "file")
 @Data
 public class FileProperties {
+
+    /**
+     * 上传文件的路径地址，配置文件中查看file开头的属性：  upload-dir
+     */
     private String uploadDir;
 
-//    public String getUploadDir() {
-//        return uploadDir;
-//    }
-//    public void setUploadDir(String uploadDir) {
-//        this.uploadDir = uploadDir;
-//    }
 }

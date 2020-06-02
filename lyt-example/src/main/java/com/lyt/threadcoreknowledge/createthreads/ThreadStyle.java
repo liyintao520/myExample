@@ -1,4 +1,4 @@
-package threadcoreknowledge.createthreads;
+package com.lyt.threadcoreknowledge.createthreads;
 
 /**
  * 描述：     用Thread方式实现线程

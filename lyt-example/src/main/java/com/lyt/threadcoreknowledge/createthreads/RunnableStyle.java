@@ -1,4 +1,4 @@
-package threadcoreknowledge.createthreads;
+package com.lyt.threadcoreknowledge.createthreads;
 
 import lombok.extern.slf4j.Slf4j;
 

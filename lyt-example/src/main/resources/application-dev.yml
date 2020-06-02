@@ -7,8 +7,15 @@ server:
     accesslog:
       directory: /opt/deployjars/login/logs/
 
-#datasource config
 spring:
+  mvc:
+    view:
+      # 定位模板的目录
+      prefix: classpath:/templates/
+      # 给返回的页面添加后缀名
+      suffix: .html
+
+  #datasource config
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # serverTimezone=GMT%2B8

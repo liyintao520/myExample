@@ -1,4 +1,4 @@
-package threadcoreknowledge.createthreads.wrongways;
+package com.lyt.threadcoreknowledge.createthreads.wrongways;
 
 /**
  * 描述：     lambda表达式创建线程

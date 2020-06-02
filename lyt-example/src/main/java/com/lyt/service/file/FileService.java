@@ -9,6 +9,7 @@ package com.lyt.service.file;
 
 import com.lyt.exception.FileException;
 import com.lyt.property.FileProperties;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -24,14 +25,17 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 @Service
+@Slf4j
 public class FileService {
-
-    private final Path fileStorageLocation; // 文件在本地存储的地址
+    // 文件在本地存储的地址
+    private final Path fileStorageLocation;
 
     @Autowired
     public FileService(FileProperties fileProperties) {
+        // 文件地址赋值
         this.fileStorageLocation = Paths.get(fileProperties.getUploadDir()).toAbsolutePath().normalize();
         try {
+            // 创建目录
             Files.createDirectories(this.fileStorageLocation);
         } catch (Exception ex) {
             throw new FileException("Could not create the directory where the uploaded files will be stored.", ex);
@@ -45,16 +49,17 @@ public class FileService {
      * @return 文件名
      */
     public String storeFile(MultipartFile file) {
-        // Normalize file name
+        // 获取原始文件名，并规范文件名
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 
         try {
-            // Check if the file's name contains invalid characters
+            // 检查文件名是否包含无效字符
             if (fileName.contains("..")) {
+                log.error("对不起的！文件名包含无效的路径序列.");
                 throw new FileException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
-            // Copy file to the target location (Replacing existing file with the same name)
+            // 将文件复制到目标位置（用相同名称替换现有文件）
             Path targetLocation = this.fileStorageLocation.resolve(fileName);
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 

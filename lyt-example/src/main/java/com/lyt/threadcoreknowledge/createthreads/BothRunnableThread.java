@@ -1,4 +1,4 @@
-package threadcoreknowledge.createthreads;
+package com.lyt.threadcoreknowledge.createthreads;
 
 /**
  * 描述：     同时使用Runnable和Thread两种实现线程的方式

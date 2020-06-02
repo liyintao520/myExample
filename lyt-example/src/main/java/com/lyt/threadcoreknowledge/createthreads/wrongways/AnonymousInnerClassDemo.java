@@ -1,6 +1,4 @@
-package threadcoreknowledge.createthreads.wrongways;
-
-import threadcoreknowledge.createthreads.ThreadStyle;
+package com.lyt.threadcoreknowledge.createthreads.wrongways;
 
 /**
  * 描述：     匿名内部类的方式

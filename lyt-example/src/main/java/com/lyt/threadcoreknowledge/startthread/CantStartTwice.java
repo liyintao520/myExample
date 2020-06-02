@@ -1,4 +1,4 @@
-package threadcoreknowledge.startthread;
+package com.lyt.threadcoreknowledge.startthread;
 
 /**
  * 描述：     演示不能两次调用start方法，否则会报错
