@@ -8,13 +8,17 @@ server:
       directory: /opt/deployjars/login/logs/
 
 spring:
-  mvc:
-    view:
-      # 定位模板的目录
-#      prefix: classpath:/templates/
-      prefix: /
-      # 给返回的页面添加后缀名
-      suffix: .html
+  application:
+    name: spring-boot
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  thymeleaf:
+    mode: HTML5
+    cache: false
+    encoding: UTF-8
+    prefix: classpath:/templates/
+#    suffix: .html
 
   # 数据库配置
   datasource:

@@ -8,15 +8,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
 @Controller
-@RequestMapping
+@RequestMapping("/index")
 public class IndexController {
     /**
-     * http://localhost:8020/index
+     * http://localhost:8020/index/index
      * @return
      */
-    @GetMapping("/index")
-    public String index(){
-        return "index"; //当浏览器输入/index时，会返回 /templates/index.html页面
+    @RequestMapping("/index")
+    public String index() {
+        System.err.println("my-shop服务测试-->IndexController-->测试返回页面");
+        //当浏览器输入index/index时，会返回 /templates/index.html页面
+        return "index";
     }
-
 }

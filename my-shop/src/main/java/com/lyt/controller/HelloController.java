@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/hello")
 @Slf4j
 public class HelloController {
 
@@ -21,12 +21,13 @@ public class HelloController {
 
     @GetMapping
     public String sayHello() {
+        log.info("HelloController-->sayHello()...");
         return "Hello SpringBoot！";
     }
 
     @GetMapping("/redis")
     public String sayRedisHello() {
-
+        log.info("HelloController-->sayRedisHello()...");
         stringStringRedisTemplate.opsForValue().set("Say redis", "Hello SpringBoot From Redis!", 5, TimeUnit.SECONDS);
         return stringStringRedisTemplate.opsForValue().get("Say redis");
     }
