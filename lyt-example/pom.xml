@@ -83,6 +83,15 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.tess4j/tess4j -->
+		<!-- 用于Tesseract OCR API的Java JNA包装器 -->
+		<dependency>
+			<groupId>net.sourceforge.tess4j</groupId>
+			<artifactId>tess4j</artifactId>
+			<version>${tess4j.version}</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<!-- 这个插件，可以将应用打包成一个可执行的jar包 -->

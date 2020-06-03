@@ -51,6 +51,8 @@
         <pagehelper.version>1.2.13</pagehelper.version>
         
         <googlecode.soundlibs.version>1.9.5.4</googlecode.soundlibs.version>
+        <!-- 用于Tesseract OCR API的Java JNA包装器 -->
+        <tess4j.version>4.5.1</tess4j.version>
 
     </properties>
 
