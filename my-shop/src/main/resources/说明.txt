@@ -2,9 +2,23 @@ static：保存所有静态资源，js、css、images
 templates：保存所有切面模板页面，（springboot默认jar包使用嵌入式的Tomcat，默认不支持jsp页面）
            可以使用模板引擎（freeMarker、thymeleaf）
 
+区别：
+static下面的可以直接通过浏览器访问：
+    http://localhost:8020/img/1.jpg
+    http://localhost:8020/test.html
+    http://localhost:8020/views/test.html
+
+templates下面的访问请注意：
+    它不能通过地址栏直接寻找跳转，而是需要通过controller来访问
+    对应的controller（采用的为spring的注解来写的controller）
+
+
+
 
 IDEA 快捷键
 
 自动补全变量名称 : Ctrl + Alt + v   command + option + v
 
 自动补全属性名称 : Ctrl + Alt + f
+
+

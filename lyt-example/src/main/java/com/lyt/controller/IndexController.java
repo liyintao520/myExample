@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class IndexController {
     @RequestMapping("")
     public String index() {
+        System.err.println("*------------------*");
         return "index/index";
     }
 }

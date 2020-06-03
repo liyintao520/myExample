@@ -18,7 +18,7 @@ spring:
     cache: false
     encoding: UTF-8
     prefix: classpath:/templates/
-#    suffix: .html
+    suffix: .html
 
   # 数据库配置
   datasource:
