@@ -1,11 +1,12 @@
 server:
-  port: 8888
+  port: 8010
   tomcat:
     access-log-pattern: checkserver--%h %l %u %t "%r" %s %b (%D ms)
     # log pattern of the access log
     access-log-enabled: true
     accesslog:
       directory: /opt/deployjars/login/logs/
+
 spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -15,9 +16,9 @@ spring:
     cache: false
     encoding: UTF-8
     prefix: classpath:/templates/
-#    suffix: .html
+    suffix: .html
 
-  #datasource config
+  # 数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # serverTimezone=GMT%2B8
@@ -45,6 +46,7 @@ spring:
       connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       use-global-data-source-stat: true
       filters: stat,wall,log4j2
+
   # redis 配置
   redis:
     host: 127.0.0.1

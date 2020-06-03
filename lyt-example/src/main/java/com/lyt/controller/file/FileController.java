@@ -33,7 +33,7 @@ public class FileController {
     private FileService fileService;
 
     /**
-     * http://localhost:8888/uploadFile
+     * http://localhost:8010/uploadFile
      * 上传单个文件
      * @param file
      * @return
@@ -48,7 +48,7 @@ public class FileController {
 
 
     /**
-     * http://localhost:8888/uploadMultipleFiles
+     * http://localhost:8010/uploadMultipleFiles
      * 上传多个文件
      * @param files
      * @return
@@ -60,7 +60,7 @@ public class FileController {
     }
 
     /**
-     * http://localhost:8888/downloadFile/1.gif
+     * http://localhost:8010/downloadFile/1.gif
      * 下载文件
      * @param fileName
      * @param request

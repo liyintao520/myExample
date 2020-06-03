@@ -32,7 +32,7 @@ public class HttpTestController {
 
     /**
      * 获取律师列表接口
-     * http://localhost:8888/doGetLawyerList?licenseNumber=58688888888888888&realName=蜡笔小新度假酒店
+     * http://localhost:8010/doGetLawyerList?licenseNumber=58688888888888888&realName=蜡笔小新度假酒店
      * @param licenseNumber 执业证号
      * @param realName    律师姓名
      * @return
