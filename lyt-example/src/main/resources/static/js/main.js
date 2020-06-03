@@ -22,7 +22,7 @@ function uploadSingleFile(file) {
         var response = JSON.parse(xhr.responseText);
         if(xhr.status == 200) {
             singleFileUploadError.style.display = "none";
-            singleFileUploadSuccess.innerHTML = "<p>File Uploaded Successfully.</p><p>DownloadUrl : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>";
+            singleFileUploadSuccess.innerHTML = "<p>文件上传成功.</p><p>下载地址 : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>";
             singleFileUploadSuccess.style.display = "block";
         } else {
             singleFileUploadSuccess.style.display = "none";
@@ -47,9 +47,9 @@ function uploadMultipleFiles(files) {
         var response = JSON.parse(xhr.responseText);
         if(xhr.status == 200) {
             multipleFileUploadError.style.display = "none";
-            var content = "<p>All Files Uploaded Successfully</p>";
+            var content = "<p>已成功上传所有文件</p>";
             for(var i = 0; i < response.length; i++) {
-                content += "<p>DownloadUrl : <a href='" + response[i].fileDownloadUri + "' target='_blank'>" + response[i].fileDownloadUri + "</a></p>";
+                content += "<p>下载地址 : <a href='" + response[i].fileDownloadUri + "' target='_blank'>" + response[i].fileDownloadUri + "</a></p>";
             }
             multipleFileUploadSuccess.innerHTML = content;
             multipleFileUploadSuccess.style.display = "block";
@@ -65,7 +65,7 @@ function uploadMultipleFiles(files) {
 singleUploadForm.addEventListener('submit', function(event){
     var files = singleFileUploadInput.files;
     if(files.length === 0) {
-        singleFileUploadError.innerHTML = "Please select a file";
+        singleFileUploadError.innerHTML = "请选择一个文件";
         singleFileUploadError.style.display = "block";
     }
     uploadSingleFile(files[0]);
@@ -75,7 +75,7 @@ singleUploadForm.addEventListener('submit', function(event){
 multipleUploadForm.addEventListener('submit', function(event){
     var files = multipleFileUploadInput.files;
     if(files.length === 0) {
-        multipleFileUploadError.innerHTML = "Please select at least one file";
+        multipleFileUploadError.innerHTML = "请至少选择一个文件";
         multipleFileUploadError.style.display = "block";
     }
     uploadMultipleFiles(files);
