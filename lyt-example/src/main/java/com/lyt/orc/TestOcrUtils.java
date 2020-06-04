@@ -20,11 +20,15 @@ import net.sourceforge.tess4j.TesseractException;
 public class TestOcrUtils {
 
     public static void main(String[] args) {
+        Long start = System.currentTimeMillis();
 //        System.out.println(getImgText("C:/Users/Administrator/Desktop/图片/1.gif"));
 //        System.out.println(getImgText("C:/Users/Administrator/Desktop/图片/3.jpg"));
-        System.out.println(getImgText("C:/Users/Administrator/Desktop/图片/3.png"));
+//        System.out.println(getImgText("C:/Users/Administrator/Desktop/图片/3.png"));
+        System.out.println(getImgText("C:/Users/Administrator/Desktop/图片/地摊.jpg"));
 //        System.out.println(getImgText("C:/Users/Administrator/Desktop/图片/5.png"));
 //        System.out.println(getImgText("C:/Users/Administrator/Desktop/图片/25.jpg"));
+        Long end = System.currentTimeMillis();
+        System.err.println("耗时：" + (end - start));
     }
 
     public static String  getImgText(String imageLocation) {

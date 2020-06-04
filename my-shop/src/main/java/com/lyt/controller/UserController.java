@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * @ClassName UserController
- * @Description TODO
+ * @Description 测试连接数据库
  * @Author liyintao
  * @Date 2020/4/23 10:46 PM
  */
