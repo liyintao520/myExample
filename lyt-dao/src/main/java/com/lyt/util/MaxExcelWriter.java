@@ -4,7 +4,6 @@ import com.lyt.module.user.entity.User;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFRichTextString;
@@ -19,7 +18,7 @@ import java.util.regex.Pattern;
 public class MaxExcelWriter {
 
     /**
-     * 这是一个通用的方法，利用了JAVA的反射机制，可以将放置在JAVA集合中并且符号一定条件的数据以EXCEL 的形式输出到指定IO设备上
+     * 这是一个通用的方法，利用了JAVA的反射机制，可以将放置在JAVA集合中并且符合一定条件的数据以EXCEL 的形式输出到指定IO设备上
      *
      * @param title   表格标题名
      * @param headers 表格属性列名数组
@@ -87,7 +86,7 @@ public class MaxExcelWriter {
             // 生成表格具体数据行
             while (it.hasNext()) {
                 index++;
-                // 如果数据大于5000行，生成下一个sheet
+                // 如果数据大于50000行，生成下一个sheet
                 if (index > 50000) {
                     index = 0;
                     ++sheetnum;
@@ -193,8 +192,8 @@ public class MaxExcelWriter {
 				list.add(people);
 			}
 			MaxExcelWriter writer = new MaxExcelWriter();
-			byte[] buff = writer.exportExcel("测试例子", new String[]{"用户名", "密码","创建时间","修改时间"}, list, null);
-			OutputStream os = new FileOutputStream(new File("E:/蛋蛋老骚逼.xlsx"));
+			byte[] buff = writer.exportExcel("测试例子", new String[]{"ID", "用户名", "密码","创建时间","修改时间"}, list, null);
+			OutputStream os = new FileOutputStream(new File("D:/excel/蛋蛋老骚逼.xlsx"));
 			IOUtils.write(buff, os);
             System.err.println("创建成功！");
 		} catch (IOException e) {
