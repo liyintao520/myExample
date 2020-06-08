@@ -48,11 +48,16 @@
         <commons-io.version>2.6</commons-io.version>
         <commons-codec.version>1.14</commons-codec.version>
         <junit.version>4.13</junit.version>
+        <!-- 分页插件 -->
         <pagehelper.version>1.2.13</pagehelper.version>
-        
+        <!-- mp3转换pcm -->
         <googlecode.soundlibs.version>1.9.5.4</googlecode.soundlibs.version>
         <!-- 用于Tesseract OCR API的Java JNA包装器 -->
         <tess4j.version>4.5.1</tess4j.version>
+        <!-- poi excel操作需要的包 -->
+        <poi.version>4.1.2</poi.version>
+        <poi-ooxml.version>4.1.2</poi-ooxml.version>
+        <poi-scratchpad.version>4.1.2</poi-scratchpad.version>
 
     </properties>
 

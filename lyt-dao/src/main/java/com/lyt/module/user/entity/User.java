@@ -41,4 +41,10 @@ public class User {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date updateTime;
 
+    public User(String userName, String passWord, Date createTime, Date updateTime) {
+        this.userName = userName;
+        this.passWord = passWord;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
 }
