@@ -1,5 +1,7 @@
 package com.lyt.module.org.entity;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 
 /**
@@ -50,7 +52,7 @@ public class OrgInfo implements Serializable {
     }
 
     public String getName() {
-        return name;
+        return StringUtils.isBlank(name) ? "" : name.trim();
     }
 
     public void setName(String name) {
@@ -66,7 +68,7 @@ public class OrgInfo implements Serializable {
     }
 
     public String getNameOfPath() {
-        return nameOfPath;
+        return StringUtils.isBlank(nameOfPath) ? "" : nameOfPath.trim();
     }
 
     public void setNameOfPath(String nameOfPath) {
@@ -74,7 +76,7 @@ public class OrgInfo implements Serializable {
     }
 
     public String getTel() {
-        return tel;
+        return StringUtils.isBlank(tel) ? "" : tel.trim();
     }
 
     public void setTel(String tel) {
@@ -82,7 +84,7 @@ public class OrgInfo implements Serializable {
     }
 
     public String getEncNo() {
-        return encNo;
+        return StringUtils.isBlank(encNo) ? "" : encNo.trim();
     }
 
     public void setEncNo(String encNo) {
@@ -122,7 +124,7 @@ public class OrgInfo implements Serializable {
     }
 
     public String getLeader() {
-        return leader;
+        return StringUtils.isBlank(leader) ? "" : leader.trim();
     }
 
     public void setLeader(String leader) {
@@ -130,7 +132,7 @@ public class OrgInfo implements Serializable {
     }
 
     public String getIntroduce() {
-        return introduce;
+        return StringUtils.isBlank(introduce) ? "" : introduce.trim();
     }
 
     public void setIntroduce(String introduce) {
