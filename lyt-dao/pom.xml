@@ -40,7 +40,7 @@
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 			<!-- 如果不注释掉 my-shop引入不进来这个包， 不注释掉的话 my-shop 需要添加引入这个包 -->
-			<scope>provided</scope>
+			<!--<scope>provided</scope>-->
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->

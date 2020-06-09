@@ -1,4 +1,4 @@
-package com.lyt.lytshop;
+package com.lyt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,0 +1,101 @@
+server:
+  port: 8100
+  tomcat:
+    access-log-pattern: checkserver--%h %l %u %t "%r" %s %b (%D ms)
+    # log pattern of the access log
+    access-log-enabled: true
+    accesslog:
+      directory: /opt/deployjars/login/logs/
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  thymeleaf:
+    mode: HTML5
+    cache: false
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # serverTimezone=GMT%2B8
+    url: jdbc:mysql://188.131.211.120:3306/myshop?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    #url: jdbc:mysql://127.0.0.1:3306/myshop?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root  #root
+    password: Lyt123456@mima  #root
+    initialSize: 10
+    maxActive: 200
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      # 间隔多久进行一次检测，检测需要关闭的空闲连接
+      time-between-eviction-runs-millis: 60000
+      # 一个连接在池中最小生存的时间
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      use-global-data-source-stat: true
+      filters: stat,wall,log4j2
+
+# redis 配置
+  redis:
+    #host: 127.0.0.1
+    host: 192.168.10.239
+    port: 6379
+    timeout: 2000ms
+    database: 0
+    password:
+    lettuce:
+      pool:
+        max-active:  100 # 连接池最大连接数（使用负值表示没有限制）
+        max-idle: 100 # 连接池中的最大空闲连接
+        min-idle: 50 # 连接池中的最小空闲连接
+        max-wait: 6000ms
+
+  # 配置Springboot上传下载功能
+  ## MULTIPART (MultipartProperties)
+  servlet:
+    multipart:
+      # 开启 multipart 上传功能
+      enabled: true
+      # 文件写入磁盘的阈值
+      file-size-threshold: 2KB
+      # 最大文件大小
+      max-file-size: 200MB
+      # 最大请求大小
+      max-request-size: 215MB
+
+## 文件存储所需参数
+# 所有通过 REST APIs 上传的文件都将存储在此目录下
+file:
+  upload-dir: /uploads
+
+
+
+#mybatis config
+mybatis:
+  #typeAliasesPackage: com.lyt.moduel.*
+#  实体类包路径
+  type-aliases-package: com.lyt.moduel.*
+#  配置MyBatis基础属性
+  config-locations: classpath:mappings/**/*.xml
+#  配置Mapper XML文件
+  mapper-locations: classpath:mapper/**/*.xml
+
+  configuration:
+    call-setters-on-nulls: true
+    # 打印sql, 方便调试
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    use-generated-keys: true
+    default-statement-timeout: 60
+    default-fetch-size: 100

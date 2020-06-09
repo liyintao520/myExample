@@ -67,10 +67,10 @@
 			<version>${junit.version}</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-		</dependency>
+		</dependency>-->
 		<!-- 使用@RestController注解 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
