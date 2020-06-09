@@ -211,6 +211,19 @@
 			<version>${poi-scratchpad.version}</version>
 		</dependency>
 
+		<!--ocr、speech-->
+		<dependency>
+			<groupId>com.baidu.aip</groupId>
+			<artifactId>java-sdk</artifactId>
+			<version>${baidu.version}</version>
+		</dependency>
+		<!--mp3转pcm-->
+		<dependency>
+			<groupId>com.googlecode.soundlibs</groupId>
+			<artifactId>mp3spi</artifactId>
+			<version>${googlecode.soundlibs.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

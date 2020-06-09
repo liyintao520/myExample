@@ -58,7 +58,8 @@
         <poi.version>4.1.2</poi.version>
         <poi-ooxml.version>4.1.2</poi-ooxml.version>
         <poi-scratchpad.version>4.1.2</poi-scratchpad.version>
-
+        <baidu.version>4.7.0</baidu.version>
+        <googlecode.soundlibs.version>1.9.5.4</googlecode.soundlibs.version>
     </properties>
 
     <modules>
