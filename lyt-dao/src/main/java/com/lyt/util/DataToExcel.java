@@ -46,7 +46,7 @@ public class DataToExcel {
     private static String apiSec = "640000";
     public static void main(String[] args) {
         try {
-            createExcel("1");
+//            createExcel("1");
 //            createExcel("2");
             createExcel("5");
 //            List<OrgInfo> list1 = doGetDataList(city, null, 1, 100000, "2");
@@ -136,12 +136,32 @@ public class DataToExcel {
                 cellStyle.setBorderLeft(BorderStyle.THIN);//左边框
                 cellStyle.setBorderTop(BorderStyle.THIN);//上边框
                 cellStyle.setBorderRight(BorderStyle.THIN);//右边框
-                int rowNum = 2;
                 // Excel数据实体bean
                 OrgInfo bean = null;
+                int sheetnum = 0;
+                int index = 1;  //
+                String[] headers = new String[]{"ID", "用户名", "密码","创建时间","修改时间"};
                 for (int i = 0; i < list.size(); i++) {
                     bean = list.get(i);
-                    row = sheet.createRow(rowNum++);
+                    index++;
+                    // 如果数据大于100行，生成下一个sheet
+                    if (index > 100) {
+                        // TODO 创建sheet分页，创建行和标题。
+                        index = 1;  //  从第几行开始（坐标是从0开始的）
+                        ++sheetnum;
+                        sheet = wb.createSheet("李银涛" + sheetnum);
+                        // 创建第一行
+                        row = sheet.createRow(0);
+                        cellIndex = 0;
+                        // 创建标题
+                        for (int n = 0; n < headers.length; n++) {
+                            XSSFCell cell1 = row.createCell(cellIndex++);
+                            cell1.setCellStyle(cellStyle);
+                            XSSFRichTextString text = new XSSFRichTextString(headers[n]);
+                            cell1.setCellValue(text);
+                        }
+                    }
+                    row = sheet.createRow(index);
                     cellIndex = 0;
 //                   地区编码 	机构名称	机构类型	业务范围	所属区域（省）	所属区域（市）	所属区域（区/县）	机构地址	统一社会信用代码	官方网址	主管司法局	成立时间	负责科室	负责人	联系电话	传真号码	机构编码	简介	错误提示
                     cell = row.createCell(cellIndex++);
