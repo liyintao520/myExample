@@ -73,14 +73,28 @@ public class UserController {
     }
 
     /**
+     * http://localhost:8020/xmlInsert
+     * 批量添加数据   分批次，多线程
+     * pageSize 每段多少条数据     默认是10000
+     * @return
+     */
+    @PostMapping("/xmlInsert")
+    public JSONObject xmlInsert (@RequestParam(name="pageSize",required = false, defaultValue="500") Integer pageSize){
+        return userService.xmlInsert(pageSize);
+    }
+
+    /**
+     * http://localhost:8020/remove
      * 删除
      * @param userId
+     * @param type 0:全部删除，1：根据id删除
      * @return
      */
     @PostMapping("/remove")
-    public int remove(Integer userId){
-        return userService.remove(userId);
+    public int remove(Integer userId, String type){
+        return userService.remove(userId, type);
     }
+
 
     /**
      * 修改

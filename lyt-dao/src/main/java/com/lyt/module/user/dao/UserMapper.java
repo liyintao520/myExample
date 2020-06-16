@@ -32,13 +32,24 @@ public interface UserMapper {
     })
     int insert(User user);
 
-    @Delete({
-            "delete from l_user where id = #{userId}"
-    })
+    /**
+     * 根据id删除
+     * @param userId
+     * @return
+     */
+    @Delete({"delete from l_user where id = #{userId}"})
     int remove(Integer userId);
+
+    /**
+     * 删除全部
+     * @return
+     */
+    @Delete({"delete from l_user"})
+    int removeAll();
 
     @Update({
             "update l_user set USER_NAME = #{userName}, PASS_WORD = #{passWord} where id = #{id}"
     })
     int update(User user);
+
 }

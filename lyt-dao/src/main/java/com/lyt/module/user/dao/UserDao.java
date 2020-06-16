@@ -25,4 +25,11 @@ public interface UserDao {
      * @return
      */
     List<User> findByIds(@Param("ids")List<Integer> ids);
+
+    /**
+     * 批量添加数据
+     * @param list
+     * @return
+     */
+    int doBathAdd(List<User> list);
 }

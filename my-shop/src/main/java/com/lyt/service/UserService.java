@@ -15,7 +15,16 @@ public interface UserService {
 
     int insert(User user);
 
-    int remove(Integer userId);
+    /**
+     * 每段多少条数据
+     * @param pageSize
+     * @return
+     */
+    JSONObject xmlInsert(Integer pageSize);
+
+
+    int remove(Integer userId, String type);
 
     int update(User user);
+
 }

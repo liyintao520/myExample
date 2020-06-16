@@ -40,4 +40,16 @@
             </if>
         </where>
     </select>
+
+    <!-- 批量添加数据 -->
+    <insert id="doBathAdd" parameterType="java.util.List">
+        insert into l_user(`USER_NAME`, `PASS_WORD`, `CREATE_TIME`, `UPDATE_TIME`)
+        values
+        <foreach collection ="list" item="item" index= "index" separator =",">
+            (
+            #{item.userName, jdbcType=VARCHAR}, #{item.passWord, jdbcType=VARCHAR},
+            #{item.createTime, jdbcType=TIMESTAMP}, #{item.updateTime, jdbcType=TIMESTAMP}
+            )
+        </foreach>
+    </insert>
 </mapper>

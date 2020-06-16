@@ -22,10 +22,11 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # serverTimezone=GMT%2B8
-    url: jdbc:mysql://188.131.211.120:3306/myshop?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-    #url: jdbc:mysql://127.0.0.1:3306/myshop?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+#    url: jdbc:mysql://188.131.211.120:3306/myshop?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:3306/myshop?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root  #root
-    password: Lyt123456@mima  #root
+    #    password: Lyt123456@mima  #root
+    password: root
     initialSize: 10
     maxActive: 200
     druid:
