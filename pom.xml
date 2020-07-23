@@ -59,7 +59,8 @@
         <poi-ooxml.version>4.1.2</poi-ooxml.version>
         <poi-scratchpad.version>4.1.2</poi-scratchpad.version>
         <baidu.version>4.7.0</baidu.version>
-        <googlecode.soundlibs.version>1.9.5.4</googlecode.soundlibs.version>
+        <!-- 繁体转简体 -->
+        <houbb.opencc4j.version>1.0.2</houbb.opencc4j.version>
     </properties>
 
     <modules>

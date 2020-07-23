@@ -224,6 +224,12 @@
 			<version>${googlecode.soundlibs.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.github.houbb</groupId>
+			<artifactId>opencc4j</artifactId>
+			<version>${houbb.opencc4j.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

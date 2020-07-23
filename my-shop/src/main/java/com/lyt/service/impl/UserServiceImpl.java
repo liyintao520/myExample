@@ -8,6 +8,7 @@ import com.lyt.module.user.dao.UserDao;
 import com.lyt.module.user.dao.UserMapper;
 import com.lyt.module.user.entity.User;
 import com.lyt.service.UserService;
+import com.lyt.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -94,23 +95,9 @@ public class UserServiceImpl implements UserService {
     }
 
     public static void main(String[] args){
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 50000; i++) {
-            list.add(i);
-        }
-        int size = list.size();
-        int pageSize = 10000;
-        int pageCount = 0 ;
-        if (size % pageSize == 0){
-            pageCount = size / pageSize;
-        }else {
-            pageCount = size / pageSize + 1;
-        }
-        try {
-            doBathAddTest(list, pageCount, pageSize);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        String str = "A";
+        String str1 = "A|B|C|D|";
+        System.out.println(JsonUtil.toJson(str.split("|")));
     }
 
     /**
@@ -155,26 +142,6 @@ public class UserServiceImpl implements UserService {
         return flg;
     }
 
-    public static void doBathAddTest(List<Integer> list, int pageCount, int pageSize) throws InterruptedException, ExecutionException {
-        ExecutorService cache = Executors.newCachedThreadPool();
-        CompletionService service = new ExecutorCompletionService(cache);
-        for (int i = 0 ;i < pageCount ; i ++){
-            final int index = i;
-            service.submit(new Callable() {
-                @Override
-                public Object call() throws Exception {
-                    List subList = list.subList(index * pageSize,(index + 1) * pageSize);
-                    log.info("subList长度：{}", subList.size());
-                    return subList.size() + "";
-                }
-            });
-        }
-
-        for (int i =0 ;i < pageCount; i ++){
-            String result = (String) service.take().get();
-            System.out.println("result = " + result);
-        }
-    }
     @Override
     public int remove(Integer userId, String type) {
         if ("0".equals(type)) {

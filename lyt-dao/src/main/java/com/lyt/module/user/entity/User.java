@@ -47,4 +47,7 @@ public class User {
         this.createTime = createTime;
         this.updateTime = updateTime;
     }
+
+    public User() {
+    }
 }
