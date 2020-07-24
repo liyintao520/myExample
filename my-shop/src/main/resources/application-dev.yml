@@ -51,7 +51,7 @@ spring:
 # redis 配置
   redis:
     #host: 127.0.0.1
-    host: 192.168.10.239
+    host: 192.168.10.239  # 测试服务器
     port: 6379
     timeout: 2000ms
     database: 0

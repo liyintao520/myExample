@@ -20,7 +20,7 @@ public class RedisTestService {
     private RedisTemplate<String, String> stringStringRedisTemplate = null;
 
     public String testRedis() {
-        stringStringRedisTemplate.opsForValue().set("Say redis", "Hello SpringBoot From Redis!", 5, TimeUnit.SECONDS);
+        stringStringRedisTemplate.opsForValue().set("Say redis", "Hello SpringBoot From Redis!", 60, TimeUnit.SECONDS);
         return stringStringRedisTemplate.opsForValue().get("Say redis");
     }
 }
