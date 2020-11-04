@@ -230,6 +230,13 @@
 			<version>${houbb.opencc4j.version}</version>
 		</dependency>
 
+		<!-- 使用Hutool实现AES、DES加密解密 -->
+		<!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>${hutool-all.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
