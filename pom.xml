@@ -63,6 +63,8 @@
         <houbb.opencc4j.version>1.0.2</houbb.opencc4j.version>
         <!-- 使用Hutool实现AES、DES加密解密 -->
         <hutool-all.version>5.3.10</hutool-all.version>
+        <!-- 通过jsch远程执行一些linux命令 -->
+        <jsch-version>0.1.54</jsch-version>
     </properties>
 
     <modules>

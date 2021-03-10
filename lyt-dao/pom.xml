@@ -237,6 +237,15 @@
 			<artifactId>hutool-all</artifactId>
 			<version>${hutool-all.version}</version>
 		</dependency>
+
+		<!-- 通过jsch远程执行一些linux命令 -->
+		<!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>${jsch-version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
