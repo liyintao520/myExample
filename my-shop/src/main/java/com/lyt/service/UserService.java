@@ -27,4 +27,6 @@ public interface UserService {
 
     int update(User user);
 
+    User saveWeChatUser(String code);
+
 }
