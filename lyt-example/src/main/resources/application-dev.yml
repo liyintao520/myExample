@@ -1,5 +1,6 @@
 server:
   port: 8010
+  #port: 8080  # 内网穿透的话用8080
   tomcat:
     access-log-pattern: checkserver--%h %l %u %t "%r" %s %b (%D ms)
     # log pattern of the access log
